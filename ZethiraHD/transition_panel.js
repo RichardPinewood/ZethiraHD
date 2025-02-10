@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   const coverInput = document.getElementById("cover-input");
   const coverPreview = document.getElementById("cover-preview");
 
-  // Retrieve JWT Token from localStorage
   let token = localStorage.getItem("token")?.trim();
   if (!token) {
     alert("Você precisa estar logado para fazer upload de filmes.");
@@ -21,12 +20,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
   console.log("JWT Token Retrieved:", token);
 
-  // Trigger file selection for movie file
   fileSelectButton.addEventListener("click", function () {
     fileInput.click();
   });
 
-  // Update UI when a movie file is selected
   fileInput.addEventListener("change", function () {
     if (fileInput.files.length > 0) {
       const fileName = fileInput.files[0].name;
@@ -46,12 +43,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   });
 
-  // Trigger cover image selection when the cover preview is clicked
   coverPreview.addEventListener("click", function () {
     coverInput.click();
   });
 
-  // Update cover preview when a cover image is selected
   coverInput.addEventListener("change", function () {
     if (coverInput.files && coverInput.files[0]) {
       const reader = new FileReader();
@@ -63,7 +58,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   });
 
-  // Handle form submission with debugging for FormData entries
   uploadForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -76,39 +70,33 @@ document.addEventListener("DOMContentLoaded", async function () {
     const year = movieYear.value.trim();
     const file = fileInput.files[0];
 
-    // Basic validation: check if required fields are provided
     if (!title || !year || !file) {
       alert("Por favor, insira o nome, o ano e selecione um ficheiro.");
       return;
     }
 
-    // Prepare FormData with movie metadata and file
     const formData = new FormData();
     formData.append("movieTitle", title);
     formData.append("movieYear", year);
     formData.append("movieFile", file);
 
-    // Optionally include the cover image if provided
     if (coverInput.files && coverInput.files[0]) {
       formData.append("coverFile", coverInput.files[0]);
     }
 
-    // Debug: Log all FormData entries
     for (let [key, value] of formData.entries()) {
       console.log(`FormData entry - ${key}:`, value);
     }
 
     try {
-      // Disable button & show loading state
       saveButton.textContent = "Enviando...";
       saveButton.disabled = true;
 
-      // Send FormData to backend (ensure the API route is correct)
       const response = await fetch("http://localhost:5000/api/auth/upload", {
         method: "POST",
         body: formData,
         headers: {
-          "x-auth-token": token // Ensure token is properly sent
+          "x-auth-token": token 
         }
       });
 
@@ -121,7 +109,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       console.log("✅ Upload Successful:", data);
       alert(`Filme "${data.movie.title}" (${data.movie.year}) salvo com sucesso!`);
 
-      // Reset the form and UI elements
       uploadForm.reset();
       fileInfo.textContent = "Nenhum ficheiro selecionado";
       fileInfo.classList.remove("active");
@@ -132,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       saveButton.textContent = "Salvar";
       saveButton.disabled = false;
 
-      // Optionally update the cover preview (if needed)
+    
       if (data.movie.coverPath) {
         coverPreview.style.backgroundImage = `url(http://localhost:5000/${data.movie.coverPath})`;
       } else {
@@ -140,16 +127,11 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
       coverPreview.textContent = "";
 
-      // Redirect to library page after successful upload
       window.location.href = "library.html";
     } catch (error) {
-      console.error("❌ Upload Error:", error);
-      // If the error is due to an invalid token, prompt the user to log in again
+      console.error("Upload Error:", error);
       if (error.message.includes("Invalid token")) {
         alert("Seu token é inválido. Por favor, faça login novamente.");
-        // Optionally, clear the token and redirect to the login page:
-        // localStorage.removeItem("token");
-        // window.location.href = "index.html";
       } else {
         alert("Ocorreu um erro durante o upload: " + error.message);
       }

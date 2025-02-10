@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const playButton = movieCard.querySelector(".play-btn");
       playButton.addEventListener("click", () => {
-        window.location.href = `player.html?movieId=${movie._id}`; // ✅ Now sending movieId instead of full video URL
+        window.location.href = `player.html?movieId=${movie._id}`; 
       });
     });
 
