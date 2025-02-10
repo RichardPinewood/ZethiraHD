@@ -2,15 +2,12 @@ const form = document.getElementById('loginForm');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 
-// Listen for form submission
 form.addEventListener('submit', async (e) => {
-  e.preventDefault(); // Prevent the form from refreshing the page
+  e.preventDefault(); 
 
-  // Get the values from the form fields
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
-  // Check if both fields are filled in
   if (!email || !password) {
     alert('Please fill in all fields');
     return;
