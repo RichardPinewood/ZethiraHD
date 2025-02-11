@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
   const token = localStorage.getItem("token")?.trim();
   if (!token) {
-    alert("Você precisa estar logado para visualizar os filmes.");
+    alert("Precisas de iniciar sessão para visualizar os filmes.");
     return;
   }
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.querySelectorAll(".remove-btn").forEach((btn) => {
       btn.addEventListener("click", async function () {
         const movieId = this.getAttribute("data-id");
-        if (confirm("Tem certeza que deseja remover este filme?")) {
+        if (confirm("Tens a certeza que queres remover o filme ?")) {
           await deleteMovie(movieId);
         }
       });
@@ -70,11 +70,10 @@ document.addEventListener("DOMContentLoaded", async function () {
           "x-auth-token": token,
         },
       });
-      if (!response.ok) throw new Error("Erro ao deletar filme.");
+      if (!response.ok) throw new Error("Erro ao eliminar filme.");
       fetchMovies();
     } catch (error) {
-      console.error("Error deleting movie:", error);
-      alert("Falha ao remover o filme.");
+      alert("Erro ao eliminiar o filme.");
     }
   }
 

@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
 
       const data = await response.json();
-      console.log("✅ Upload Successful:", data);
+      console.log("Upload feito com sucesso:", data);
       alert(`Filme "${data.movie.title}" (${data.movie.year}) salvo com sucesso!`);
 
       uploadForm.reset();
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     } catch (error) {
       console.error("Upload Error:", error);
       if (error.message.includes("Invalid token")) {
-        alert("Seu token é inválido. Por favor, faça login novamente.");
+        alert("O token é inválido. Por favor, faça login novamente.");
       } else {
         alert("Ocorreu um erro durante o upload: " + error.message);
       }
@@ -140,3 +140,4 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   });
 });
+     

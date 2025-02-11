@@ -11,7 +11,7 @@ form.addEventListener('submit', async (e) => {
   const password = passwordInput.value.trim();
 
   if (!username || !email || !password) {
-    alert('Please fill in all fields');
+    alert('Por favor preenche os campos em branco');
     return;
   }
 
@@ -27,7 +27,7 @@ form.addEventListener('submit', async (e) => {
     const result = await response.json();
 
     if (response.ok && result.token) {
-      alert('Registration successful!');
+      alert('Registro feito com sucesso!');
       
       localStorage.setItem('token', result.token);
      
@@ -36,7 +36,7 @@ form.addEventListener('submit', async (e) => {
       alert(result.message || 'Registration failed!');
     }
   } catch (error) {
-    alert('An error occurred. Please try again later.');
+    alert('Ups,aconteçeu alguma coisa,tenta outra vez.');
     console.error('Registration error:', error);
   }
 });

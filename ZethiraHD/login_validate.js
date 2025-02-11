@@ -9,7 +9,7 @@ form.addEventListener('submit', async (e) => {
   const password = passwordInput.value.trim();
 
   if (!email || !password) {
-    alert('Please fill in all fields');
+    alert('Por favor preenche os campos em branco');
     return;
   }
 
@@ -38,7 +38,7 @@ form.addEventListener('submit', async (e) => {
     }
   } catch (error) {
     
-    alert('An error occurred. Please try again later.');
+    alert('Um erro occureu,tente novamente mais tarde');
     console.error('Login error:', error);
   }
 });
