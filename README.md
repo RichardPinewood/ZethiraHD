@@ -1,5 +1,5 @@
 # ZethiraHD
-How can i setup project ?
+How can i setup the project ?
 I hided the file server.js due to vulnerability concerns,it is were i store the password to my databse.
 But you can create one yourself in your backend ,you just need to paste the following : 
 
