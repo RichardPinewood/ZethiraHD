@@ -44,21 +44,21 @@ body {
 }
 
 .nav-links a::after {
-    content: ""; 
+    content: "";
     position: absolute;
-    bottom: 0; 
-    left: 50%; 
-    width: 0; 
-    height: 2px; 
-    background-color: white; 
-    transition: width 0.3s ease, left 0.3s ease; 
+    bottom: 0;
+    left: 0;         
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
 }
 
-.nav-links a.active::after,
-.nav-links a:hover::after {
-    width: 100%; 
-    left: 0; 
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;    
 }
+
 
 .brand-phrase {
     color: white;
@@ -193,3 +193,7 @@ input {
     padding: 0 5px;
     pointer-events: none;
   }
+
+  input[type="file"] {
+    display: none; 
+}
