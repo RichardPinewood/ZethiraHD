@@ -72,7 +72,7 @@
       <a href="home.html">Início</a>
       <a href="library.html">Biblioteca</a>
       <a href="perfil.html">Perfil</a>
-      <a href="index.html">Sair</a>
+      <a href="index.html" id="logout">Sair</a>
     </div>
   </nav>
 
@@ -88,6 +88,18 @@
         </p>
     </div>
 </main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const logoutLink = document.getElementById('logout');
+    logoutLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      if (confirm('Tens a certeza que queres sair?')) {
+        window.location.href = 'index.html';
+      }
+    });
+  });
+</script>
 
   <script src="perfil_data.js"></script>
 </body>
