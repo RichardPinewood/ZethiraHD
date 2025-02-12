@@ -1,7 +1,9 @@
-# ZethiraHD
-How can i setup the project ?
-I hided the file server.js due to vulnerability concerns,it is were i store the password to my databse.
-But you can create one yourself in your backend ,you just need to paste the following : 
+Imortant : ZethiraHD is still under devolopment,there is plans to install a domain very soon when everything is working fine !
+
+But you can still run the project locally you just need to create the following has i say say bellow :
+
+I hided the file server.js due to vulnerability concerns,it is were i store the password to my databse,in the backend you just need to create the file again...
+
 
 const express = require("express");
 const mongoose = require("mongoose");
