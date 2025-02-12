@@ -2,7 +2,7 @@ Imortant : ZethiraHD is still under devolopment,there is plans to install a doma
 
 But you can still run the project locally you just need to create the following has i say say bellow :
 
-I hided the file server.js due to vulnerability concerns,it is were i store the password to my databse,in the backend you just need to create the file agaig
+I hided the file server.js due to vulnerability concerns,it is were i store the password to my databse,in the backend you just need to create the file again,
 here it is the code :
 
 
