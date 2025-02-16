@@ -10,7 +10,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const PORT = process.env.PORT || 5000; ( or any port you like dont forget to change it also in the frontend side)
+const PORT = process.env.PORT || 5000; ( or any port you like ! dont forget to change also in the frontend)
 
 const MONGO_URI =
   process.env.MONGO_URI ||
