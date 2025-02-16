@@ -179,7 +179,7 @@
           <div id="file-info" class="file-info">Nenhum ficheiro selecionado</div>
           <div id="separator" class="separator"></div>
           <div class="input-group" id="input-group">
-            <input type="text" id="movie-title" name="movieTitle" placeholder="Insira o nome do filme">
+            <input type="text" id="movie-title" name="movieTitle" placeholder="Nome do filme">
             <input type="number" id="movie-year" name="movieYear" placeholder="Ano do filme">
           </div>
         </div>
@@ -198,19 +198,8 @@
     </form>
   </div>
 
+  <script src="logout_redirect.js"></script>
   <script src="transition_panel.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const logoutLink = document.getElementById('logout');
-      logoutLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        if (confirm('Tens a certeza que queres sair?')) {
-          window.location.href = 'index.html';
-        }
-      });
-    });
-  </script>
 
 </body>
 </html>

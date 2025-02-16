@@ -44,7 +44,7 @@
         }
 
         .profile-container {
-          background-color: #fff;
+          background-color: #1f1f1f;
           border-radius: 8px;
           padding: 40px;
           width: 100%;
@@ -61,6 +61,12 @@
 
         .profile-container h2 {
             text-align: start;
+            color: white;
+        }
+
+        .profile-container p {
+            text-align: start;
+            color: white;
         }
       </style>
 
@@ -86,21 +92,11 @@
         <p class="profile-detail">
             <strong>Email:</strong> <span id="email"></span>
         </p>
-    </div>
+    </div>«
 </main>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const logoutLink = document.getElementById('logout');
-    logoutLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      if (confirm('Tens a certeza que queres sair?')) {
-        window.location.href = 'index.html';
-      }
-    });
-  });
-</script>
-
+  <script src="logout_redirect.js"></script>
   <script src="perfil_data.js"></script>
+
 </body>
 </html>
