@@ -27,14 +27,14 @@ form.addEventListener('submit', async (e) => {
 
    
     if (response.ok && result.token) {
-      alert('Login successful!');
+      alert('Login feito com sucesso!');
      
       localStorage.setItem('token', result.token);
      
       window.location.href = '/home.html';
     } else {
      
-      alert(result.message || 'Login failed!');
+      alert(result.message || 'Erro no sistema!');
     }
   } catch (error) {
     

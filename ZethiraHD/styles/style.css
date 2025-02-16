@@ -197,3 +197,25 @@ input {
   input[type="file"] {
     display: none; 
 }
+
+@media screen and (max-width: 768px) {
+    .faq-item {
+      display: block;
+      width: 90%;
+      margin: 20px auto;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    nav {
+      text-align: center;
+    }
+    nav .nav-links {
+      float: none;
+      display: inline-block;
+    }
+    nav .nav-links a {
+      display: inline-block;
+      margin: 10px 5px;
+    }
+  }
