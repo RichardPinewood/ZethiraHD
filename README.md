@@ -1,4 +1,4 @@
-Imortant : ZethiraHD is still under devolopment,there is plans to install a domain very soon when everything is working fine,you won't need to do this later on !
+Imortant : ZethiraHD is still under devolopment,there is plans to install a domain very soon when everything is working fine,you won't need to do this later on  if you waunt !
 
 But you can still run the project locally you just need to create the following has i say say bellow :
 
