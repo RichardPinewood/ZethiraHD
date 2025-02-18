@@ -12,3 +12,6 @@ Aqui mostro uma demo da aplicação web :
 
 (SingUp.html)
 ![Image](https://github.com/user-attachments/assets/71d43de0-3d84-43fa-82f1-0f343c7bb904)
+
+(Home.html)
+![Image](https://github.com/user-attachments/assets/41eee2de-184d-45d2-9b98-88fc2087723a)
