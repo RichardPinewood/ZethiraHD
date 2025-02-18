@@ -8,5 +8,5 @@ Aqui mostro uma demo da aplicação web :
 ![Image](https://github.com/user-attachments/assets/d6c203de-f53b-45d3-9f33-7448c0aa989a)
 
 (Home.html)
-![Image](https://github.com/user-attachments/assets/8e3104cb-d5cc-414e-861e-2df419a6e1ec)
+
 
