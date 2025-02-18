@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZethiraHD</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #121212;
       color: #f1f1f1;
       margin: 0;
       padding: 0;
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 10px;
+    .nav-links {
+      margin-right: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     .movie-container {
@@ -40,7 +39,7 @@
     }
 
     .movie-container h2 {
-      text-align: center;
+      text-align: left;
       color: #ff7e5f;
     }
 
@@ -62,11 +61,11 @@
 
     .movie-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       padding: 0;
       margin: 0;
       list-style: none;
+      justify-items: center;
     }
 
     .movie-card {
@@ -77,16 +76,6 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease;
       position: relative;
-    }
-
-    .movie-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      justify-items: center; 
     }
 
     .movie-card img {
@@ -145,31 +134,41 @@
       background-color: #ff5c4f;
     }
   </style>
+</head>
+<body>
 
+  <!-- Navigation -->
   <nav>
     <div>
       <div class="navbar-brand">
         <a href="home.html">ZethiraHD</a>
       </div>
       <div class="nav-links">
-          <a href="home.html">Início</a>
-          <a href="library.html">Biblioteca</a>
-          <a href="perfil.html">Perfil</a>
-          <a href="index.html" id="logout">Sair</a>
-        </div>
+        <a href="home.html">Início</a>
+        <a href="library.html">Biblioteca</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="index.html" id="logout">Sair</a>
       </div>
     </div>
   </nav>
-  <div class="movie-container">
-    <h2>Filmes Guardados</h2>
 
-    <div class="movie-form">
-      <input type="text" id="movieInput" placeholder="Procure por um filme">
-    </div>
+  <div class="movie-container">
+    <h2>Filme Escolhido</h2>
     <div id="movieList" class="movie-list">
     </div>
   </div>
 
+  <template id="movieCardTemplate">
+    <div class="movie-card">
+      <img src="" alt="" class="movie-cover">
+      <h3></h3>
+      <p></p>
+      <button class="play-btn">▶ Assistir</button>
+      <button class="remove-btn">×</button>
+    </div>
+  </template>
+
+  <!-- Scripts -->
   <script src="logout_redirect.js"></script>
   <script src="movie_database.js"></script>
 </body>

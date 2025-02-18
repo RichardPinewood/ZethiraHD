@@ -1,9 +1,21 @@
-body {
+html, body {
     background: linear-gradient(to right,black,gray); 
     margin: 0;
     height: 100vh;
+    overflow-x: hidden;
 }
-      
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px;
+}
+     
 .navbar {
     display: flex;
     justify-content: space-between;
