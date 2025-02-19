@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZethiraHD</title>
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body>
   <style>
     body {
       color: white;
@@ -114,17 +118,10 @@
       color: white;
       text-transform: uppercase;
       display: inline-block;
+      border-bottom: 2px solid orange;
+      padding-bottom: 10px;
     }
 
-    .faq-section h2::after {
-      display: block;
-      width: 80%;
-      height: 3px;
-      background-color: orange;
-      margin: 10px auto 0;
-      border-radius: 2px;
-      content: "";
-    }
 
     .faq-container {
       max-width: 800px;
@@ -166,8 +163,6 @@
       display: block;
     }
   </style>
-</head>
-<body>
 
   <nav>
     <div class="navbar-container">
@@ -190,19 +185,19 @@
 
   <div class="faq-container">
     <div class="faq-item" onclick="toggleFaq(this)">
-      <h3>Como uso a plataforma? <span>+</span></h3>
+      <h3>Como uso a plataforma? <i class="bi bi-chevron-down"></i></h3>
       <p>
         Para poderem usufruir, basta apenas criarem uma conta, carregarem no botão de upload, escolherem um filme guardado na vossa máquina e deixar que o sistema trate do resto.
       </p>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
-      <h3>Segurança e privacidade <span>+</span></h3>
+      <h3>Segurança e privacidade <i class="bi bi-chevron-down"></i></h3>
       <p>
         Ao criarem uma conta, só será visível o vosso email para que os nossos utilizadores se sintam seguros. Encriptamos as passwords; nem mesmo do nosso lado conseguimos vê-las.
       </p>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
-      <h3>Novidades e Desenvolvimento <span>+</span></h3>
+      <h3>Novidades e Desenvolvimento <i class="bi bi-chevron-down"></i></h3>
       <p>
         Este projeto ainda está em construção. Poderá haver falhas, e nem sempre tudo vai funcionar a 100%, mas mesmo assim o nosso objetivo é trazer uma ferramenta que realmente possa fazer a diferença.
       </p>
