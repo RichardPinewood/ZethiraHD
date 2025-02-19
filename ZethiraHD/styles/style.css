@@ -5,81 +5,6 @@ html, body {
     overflow-x: hidden;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 10px;
-}
-     
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    color: white;
-    position: relative;
-}
-
-.navbar-brand a {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px;
-    color: white;
-    text-decoration: none;
-    left: 20px;
-    position: absolute;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition:  0.4s ease; 
-}
-
-.nav-links {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-family: 'Times New Roman', Times, serif
-}
-
-.nav-links a {
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    position: relative; 
-    padding-bottom: 5px; 
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;         
-    width: 0;
-    height: 2px;
-    background-color: white;
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;    
-}
-
-
-.brand-phrase {
-    color: white;
-    position: relative;
-    top: 150px;
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}  
-
 .container-1{
     background-color: white;
     display: flex;
@@ -231,3 +156,5 @@ input {
       margin: 10px 5px;
     }
   }
+
+  
