@@ -1,105 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZethiraHD - Profile</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <style>
-        body {
-          font-family: Arial, sans-serif;
-          background-color: #f0f2f5;
-          color: #333;
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-        }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
 
-        .nav-links {
-              margin-right: 20px;
-        }
+    .navbar-container {
+      width: 100%;
+      padding: 0 20px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      background-color: #000;
+      position: relative;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: white;
+    }
+    /* Navbar Brand default: left aligned */
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      /* It will flow naturally to the left in the flex container */
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      margin-left: auto;
+      margin-right: 50px;
+    }
+    .nav-links li {
+      margin: 0 10px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+    }
+    .nav-links a:hover {
+      color: orange;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        background: black;
+        padding: 10px;
+        border-radius: 5px;
+        display: none;
+        width: 160px;
+        align-items: flex-start;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .nav-links.show {
+        display: flex !important;
+      }
+      /* Center the navbar-brand on mobile */
+      .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+    .profile-container {
+      background-color: #1f1f1f;
+      border-radius: 8px;
+      padding: 40px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: start;
+    }
+    .profile-detail {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin: 10px 0;
+      color: white;
+    }
+    .profile-container h2 {
+      text-align: start;
+      color: white;
+      margin-bottom: 20px;
+    }
+    .profile-container p {
+      text-align: start;
+      color: white;
+    }
+  </style>
 
-        .nav-links a {
-          color: white;
-          text-decoration: none;
-          margin: 0 15px;
-          font-size: 1.2rem;
-          font-weight: bold;
-          transition: color 0.3s ease;
-        }
-
-
-        header {
-          background-color: #4a90e2;
-          padding: 20px;
-          text-align: center;
-          color: #fff;
-        }
-    
-        main {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 20px;
-        }
-
-        .profile-container {
-          background-color: #1f1f1f;
-          border-radius: 8px;
-          padding: 40px;
-          width: 100%;
-          max-width: 500px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-          text-align: start;
-        }
-       
-        .profile-detail {
-          font-size: 1.1em;
-          line-height: 1.6;
-          margin: 10px 0;
-        }
-
-        .profile-container h2 {
-            text-align: start;
-            color: white;
-        }
-
-        .profile-container p {
-            text-align: start;
-            color: white;
-        }
-      </style>
-
-<nav>
-    <div class="navbar-brand">
-      <a href="home.html">ZethiraHD</a>
-    </div>
-    <div class="nav-links">
-      <a href="home.html">Início</a>
-      <a href="library.html">Biblioteca</a>
-      <a href="perfil.html">Perfil</a>
-      <a href="index.html" id="logout">Sair</a>
+  <nav>
+    <div class="navbar-container">
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <div class="navbar-brand">
+        <a href="index.html" style="text-decoration: none; color: white;">ZethiraHD</a>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="home.html">Início</a></li>
+        <li><a href="library.html">Biblioteca</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+        <li><a href="index.html" id="logout">Sair</a></li>
+      </ul>
     </div>
   </nav>
 
   <main>
     <div class="profile-container" id="profile-info">
-        <h2>Detalhes do Perfil</h2>
-        <p id="status"> A carregar o perfil...</p>
-        <p class="profile-detail">
-            <strong>Nome:</strong> <span id="username"></span>
-        </p>
-        <p class="profile-detail">
-            <strong>Email:</strong> <span id="email"></span>
-        </p>
-    </div>«
-</main>
+      <h2>Detalhes do Perfil</h2>
+      <p id="status">A carregar o perfil...</p>
+      <p class="profile-detail">
+        <strong>Nome:</strong> <span id="username"></span>
+      </p>
+      <p class="profile-detail">
+        <strong>Email:</strong> <span id="email"></span>
+      </p>
+    </div>
+  </main>
 
   <script src="logout_redirect.js"></script>
   <script src="perfil_data.js"></script>
 
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+      const navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
