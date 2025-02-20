@@ -3,12 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZethiraHD - Biblioteca</title>
+  <title>ZethiraHD</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <style>
+    .navbar-brand {
+      display: auto;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      bottom: 10px;
+    }
+    
+    .navbar-brand a {
+      text-decoration: none;
+      color: orange;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
     .nav-links {
       list-style: none;
       display: flex;
@@ -38,8 +55,9 @@
       }
       
       .navbar-brand {
+        display: flex;
         position: absolute;
-        left: 50%;
+        left: 46%;
         transform: translateX(-50%);
       }
       
@@ -63,7 +81,7 @@
         display: flex !important;
       }
     }
-    
+
     .movie-container {
       position: relative;
       top: 80px;
@@ -76,7 +94,7 @@
     }
 
     .movie-container h2 {
-      text-align: left;
+      text-align: center;
       color: #ff7e5f;
     }
 
@@ -157,20 +175,20 @@
     }
   </style>
 
-<nav>
-  <div class="navbar-container">
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <div class="navbar-brand">
-      <a href="index.html">ZethiraHD</a>
+  <nav>
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="home.html">ZethiraHD</a>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="library.html">Biblioteca</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+        <li><a href="index.html" id="logout">Sair</a></li>
+      </ul>
     </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="home.html">Inicio</a></li>
-      <li><a href="library.html">Biblioteca</a></li>
-      <li><a href="perfil.html">Perfil</a></li>
-      <li><a href="index.html" id="logout">Sair</a></li>
-    </ul>
-  </div>
-</nav>
+  </nav>
   
   <div class="movie-container">
     <h2>Pronto para assistir</h2>
@@ -190,11 +208,7 @@
   
   <script src="logout_redirect.js"></script>
   <script src="movie_database.js"></script>
-  <script>
-    document.getElementById("menu-toggle").addEventListener("click", function() {
-      const navLinks = document.getElementById("nav-links");
-      navLinks.classList.toggle("show");
-    });
-  </script>
+  <script src="toggle_menu.js"></script>
+  
 </body>
 </html>

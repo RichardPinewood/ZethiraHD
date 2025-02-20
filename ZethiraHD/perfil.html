@@ -18,9 +18,20 @@
     }
 
     .navbar-brand {
+      display: auto;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      bottom: 10px;
+    }
+
+    .navbar-brand a {
+      text-decoration: none;
+      color: orange;
       font-size: 1.5rem;
       font-weight: bold;
-      color: white;
     }
 
     .nav-links {
@@ -50,6 +61,12 @@
       .menu-toggle {
         display: block;
       }
+      .navbar-brand {
+        display: flex;
+        position: absolute;
+        left: 46%;
+        transform: translateX(-50%);
+      }
       .nav-links {
         flex-direction: column;
         position: absolute;
@@ -67,12 +84,6 @@
       }
       .nav-links.show {
         display: flex !important;
-      }
-
-      .navbar-brand {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
       }
     }
   
@@ -118,7 +129,7 @@
     <div class="navbar-container">
       <div class="menu-toggle" id="menu-toggle">☰</div>
       <div class="navbar-brand">
-        <a href="index.html" style="text-decoration: none; color: white;">ZethiraHD</a>
+        <a href="index.html">ZethiraHD</a>
       </div>
       <ul class="nav-links" id="nav-links">
         <li><a href="home.html">Início</a></li>
@@ -144,12 +155,7 @@
 
   <script src="logout_redirect.js"></script>
   <script src="perfil_data.js"></script>
-
-  <script>
-    document.getElementById("menu-toggle").addEventListener("click", function() {
-      const navLinks = document.getElementById("nav-links");
-      navLinks.classList.toggle("show");
-    });
-  </script>
+  <script src="toggle_menu.js"></script>
+  
 </body>
 </html>

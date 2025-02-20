@@ -30,6 +30,33 @@ nav {
   position: relative;
 }
 
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.nav-links li {
+  margin: 0 5px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.nav-links a:hover {
+  color: orange;
+}
+
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -167,12 +194,5 @@ input {
     display: none; 
 }
 
-  .navbar-brand a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
 
   
