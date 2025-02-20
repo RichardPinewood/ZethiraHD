@@ -4,11 +4,12 @@
 }
 
 html, body {
-    background: linear-gradient(to right,black,gray); 
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(to right,black,gray); 
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 nav {

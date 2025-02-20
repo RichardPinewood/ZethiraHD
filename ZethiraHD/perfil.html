@@ -97,6 +97,10 @@
     }
 
     .profile-container {
+      display: auto;
+      position: relative;
+      bottom: 250px;     
+      right: 480px;     
       background-color: #1f1f1f;
       border-radius: 8px;
       padding: 40px;
@@ -104,6 +108,15 @@
       max-width: 500px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       text-align: start;
+    }
+
+    @media (max-width: 768px) {
+      .profile-container {
+        position: static;
+        bottom: auto;
+        right: auto;
+        margin: 20px auto;
+      }
     }
 
     .profile-detail {
@@ -156,6 +169,5 @@
   <script src="logout_redirect.js"></script>
   <script src="perfil_data.js"></script>
   <script src="toggle_menu.js"></script>
-  
 </body>
 </html>
