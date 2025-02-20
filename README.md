@@ -8,7 +8,7 @@ Here i display a small demo of the prototype :
 ![Image](https://github.com/user-attachments/assets/7a97d01b-a2da-4622-a4ae-9c660d43903e)
 
 (Home.html)
-![Image](https://github.com/user-attachments/assets/b304e1b5-2044-4349-8b9d-f45190ea952f)
+![Image](https://github.com/user-attachments/assets/52aad45d-c926-491e-8094-1a7916d019ab)
 
 (Library.html)
 Thinking....
