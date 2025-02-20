@@ -5,10 +5,10 @@ I hided the file server.js due to vulnerability concerns,it is were i store the 
 Here i display a small demo of the prototype :
 
 (Index.html)
-![Image](https://github.com/user-attachments/assets/9e3aa123-d0ea-4ec4-943e-72b8725e6bcf)
+![Image](https://github.com/user-attachments/assets/d98d3c86-9e66-4ba2-85d7-0c00857cefd8)
 
 (Home.html)
-![Image](https://github.com/user-attachments/assets/66289f1f-7015-488c-9f9b-a26f4e37a922)
+Thinking....
 
 (Library.html)
-![Image](https://github.com/user-attachments/assets/6582f2ec-7186-435f-a445-6e3d3cbcdfa5)
+Thinking....
