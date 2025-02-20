@@ -9,7 +9,6 @@
 <body>
   <style>
     body {
-      font-family: Arial, sans-serif;
       color: #333;
       display: flex;
       flex-direction: column;
@@ -18,28 +17,12 @@
       padding: 0;
     }
 
-    .navbar-container {
-      width: 100%;
-      padding: 0 20px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      background-color: #000;
-      position: relative;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: white;
-    }
-    /* Navbar Brand default: left aligned */
     .navbar-brand {
       font-size: 1.5rem;
       font-weight: bold;
       color: white;
-      /* It will flow naturally to the left in the flex container */
     }
+
     .nav-links {
       list-style: none;
       display: flex;
@@ -48,17 +31,21 @@
       margin-left: auto;
       margin-right: 50px;
     }
+
     .nav-links li {
       margin: 0 10px;
     }
+
     .nav-links a {
       text-decoration: none;
       color: white;
       font-size: 1.2rem;
     }
+
     .nav-links a:hover {
       color: orange;
     }
+
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -81,7 +68,7 @@
       .nav-links.show {
         display: flex !important;
       }
-      /* Center the navbar-brand on mobile */
+
       .navbar-brand {
         position: absolute;
         left: 50%;
@@ -97,6 +84,7 @@
       padding: 20px;
       margin-top: 60px;
     }
+
     .profile-container {
       background-color: #1f1f1f;
       border-radius: 8px;
@@ -106,17 +94,20 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       text-align: start;
     }
+
     .profile-detail {
       font-size: 1.1em;
       line-height: 1.6;
       margin: 10px 0;
       color: white;
     }
+
     .profile-container h2 {
       text-align: start;
       color: white;
       margin-bottom: 20px;
     }
+
     .profile-container p {
       text-align: start;
       color: white;

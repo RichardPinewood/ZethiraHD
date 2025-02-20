@@ -30,6 +30,13 @@ nav {
   position: relative;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
 .container-1{
     background-color: white;
     display: flex;
