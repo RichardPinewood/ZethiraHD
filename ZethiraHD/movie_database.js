@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   async function fetchMovies() {
     try {
-      // Updated fetch URL to your Railway backend endpoint
       const response = await fetch("https://zethirahd-production-c2af.up.railway.app/api/auth/movies", {
         headers: { "x-auth-token": token },
       });
@@ -70,7 +69,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   async function deleteMovie(movieId) {
     try {
-      // Updated fetch URL to your Railway backend endpoint
       const response = await fetch(`https://zethirahd-production-c2af.up.railway.app/api/auth/movies/${movieId}`, {
         method: "DELETE",
         headers: {
