@@ -20,13 +20,14 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-app.use(express.static(path.join(__dirname, "../ZethiraHD")));
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "home.html"));
+  res.sendFile(path.join(__dirname, "../ZethiraHD/home.html"));
 
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
