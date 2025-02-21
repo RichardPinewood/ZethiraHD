@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     return;
   }
 
-  const API_URL = "https://zethirahd-production-c2af.up.railway.app/api/auth/movies";
-
   async function fetchMovies() {
     try {
-      const response = await fetch(API_URL, {
+      // Updated fetch URL to your Railway backend endpoint
+      const response = await fetch("https://zethirahd-production-c2af.up.railway.app/api/auth/movies", {
         headers: { "x-auth-token": token },
       });
+      
       if (!response.ok) throw new Error("Erro ao carregar filmes.");
       
       const movies = await response.json();
@@ -64,14 +64,14 @@ document.addEventListener("DOMContentLoaded", async function () {
           await deleteMovie(movie._id);
         }
       });
-
       movieList.appendChild(clone);
     });
   }
 
   async function deleteMovie(movieId) {
     try {
-      const response = await fetch(`${API_URL}/${movieId}`, {
+      // Updated fetch URL to your Railway backend endpoint
+      const response = await fetch(`https://zethirahd-production-c2af.up.railway.app/api/auth/movies/${movieId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

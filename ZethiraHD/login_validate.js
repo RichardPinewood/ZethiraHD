@@ -2,10 +2,8 @@ const form = document.getElementById('loginForm');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 
-const API_URL = "https://zethirahd-production-c2af.up.railway.app/api/auth/login"; 
-
 form.addEventListener('submit', async (e) => {
-  e.preventDefault(); 
+  e.preventDefault();
 
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
@@ -18,7 +16,7 @@ form.addEventListener('submit', async (e) => {
   const data = { email, password };
 
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch('https://zethirahd-production-c2af.up.railway.app/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -28,9 +26,7 @@ form.addEventListener('submit', async (e) => {
 
     if (response.ok && result.token) {
       alert('Login feito com sucesso!');
-      
       localStorage.setItem('token', result.token);
-      
       window.location.href = '/home.html';
     } else {
       alert(result.message || 'Erro no sistema!');
