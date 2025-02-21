@@ -34,39 +34,6 @@
       font-size: 1.5rem;
       font-weight: bold;
     }
-   
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-      
-      .navbar-brand {
-        display: flex;
-        position: absolute;
-        left: 46%;
-        transform: translateX(-50%);
-      }
-      
-      .nav-links {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 10px;
-        background: black;
-        padding: 10px;
-        border-radius: 5px;
-        display: none;
-        width: 160px;
-        align-items: flex-start;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-        margin-left: 0;
-        margin-right: 0;
-      }
-    
-      .nav-links.show {
-        display: flex !important;
-      }
-    }
     
     .content {
       position: relative;
@@ -87,6 +54,14 @@
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       margin: 0 auto;
+      position: relative;
+    }
+    
+    .upload-section h2 {
+      margin: 0 0 30px 0; 
+      font-size: 1.8rem; 
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
     
     .form-flex {
@@ -96,6 +71,7 @@
       justify-content: center;
       flex-wrap: wrap;
       width: 100%;
+      margin-bottom: 60px; 
     }
     
     .movie-container {
@@ -135,6 +111,7 @@
     }
     
     .btn {
+      display: auto;
       padding: 10px 20px;
       background-color: #28a745;
       border: none;
@@ -147,6 +124,13 @@
     
     .btn:hover {
       background-color: #218838;
+    }
+    
+    .save-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
     }
     
     .file-info {
@@ -204,16 +188,89 @@
       background-color: #222;
       color: white;
     }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .navbar-brand {
+        display: flex;
+        position: absolute;
+        left: 40%;
+        transform: translateX(-50%);
+      }
+      
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        background: black;
+        padding: 10px;
+        border-radius: 5px;
+        display: none;
+        width: 160px;
+        align-items: flex-start;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+        margin: 0;
+      }
+    
+      .nav-links.show {
+        display: flex !important;
+      }
+      
+      html, body {
+        overflow-y: auto;
+      }
+      
+      .content {
+        position: relative;
+        top: 100px;
+        right: 0;
+        padding: 10px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .upload-section {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 500px;
+        padding: 20px 15px;
+      }
+      
+      .upload-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+      }
+      
+      .form-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .movie-container,
+      .cover-container {
+        max-width: 100%;
+      }
+      
+      .movie-container {
+        margin-bottom: 20px;
+      }
+    }
   </style>
-
+  
   <nav>
     <div class="navbar-container">
-      <div class="navbar-brand">
-        <a href="home.html">ZethiraHD</a>
-      </div>
       <div class="menu-toggle" id="menu-toggle">☰</div>
+      <div class="navbar-brand">
+        <a href="index.html">ZethiraHD</a>
+      </div>
       <ul class="nav-links" id="nav-links">
-        <li><a href="home.html">Inicio</a></li>
+        <li><a href="home.html">Início</a></li>
         <li><a href="library.html">Biblioteca</a></li>
         <li><a href="perfil.html">Perfil</a></li>
         <li><a href="index.html" id="logout">Sair</a></li>
@@ -221,11 +278,11 @@
     </div>
   </nav>
 
-  
+
   <div class="content">
     <div id="upload-section" class="upload-section">
-      <h2>Faz upload do teu filme favorito</h2>
-      <form id="upload-form" style="position: relative; padding-bottom: 50px;">
+      <h2>Faz upload de um filme  que tenhas guardado</h2>
+      <form id="upload-form">
         <div class="form-flex">
           <div class="movie-container">
             <button type="button" id="file-select-button" class="btn">Anexar Conteúdo</button>
@@ -239,18 +296,18 @@
           </div>
           <div class="cover-container" id="cover-container">
             <div id="cover-preview" class="cover-preview">
-              Clica aqui para adicionar um imagem
+              Clica aqui para adicionar um cover de fundo
             </div>
             <input type="file" id="cover-input" name="coverFile" accept="image/*" hidden>
           </div>
         </div>
-        <button type="submit" id="save-movie-button" class="btn" style="position: absolute; bottom: 10px; right: 10px; display: none;">
+        <button type="submit" id="save-movie-button" class="btn save-button" style="display: none;">
           Salvar
         </button>
       </form>
     </div>
   </div>
-  
+
   <script src="toggle_menu.js"></script>
   <script src="logout_redirect.js"></script>
   <script src="transition_panel.js"></script>
