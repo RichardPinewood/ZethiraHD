@@ -6,12 +6,13 @@ Here i display a small demo of the prototype :
 
   (Index.html)
   ![Image](https://github.com/user-attachments/assets/7a97d01b-a2da-4622-a4ae-9c660d43903e)
+
+   - The navbar is responsive to mobile devices
+   ![Image](https://github.com/user-attachments/assets/1c7517d4-66db-4454-a809-a6d8467df26a)
   
   (Home.html)
-  ![Image](https://github.com/user-attachments/assets/653e74a3-6293-4de1-aeaf-d1563e492835)
+  ![Image](https://github.com/user-attachments/assets/753cda67-7351-4740-af9a-67be82fb35e0)
 
-  - The navbar is responsive to mobile devices
-   ![Image](https://github.com/user-attachments/assets/1c7517d4-66db-4454-a809-a6d8467df26a)
   
   (Library.html)
   Thinking....
