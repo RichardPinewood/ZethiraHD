@@ -11,7 +11,9 @@ Here i display a small demo of the prototype :
    ![Image](https://github.com/user-attachments/assets/1c7517d4-66db-4454-a809-a6d8467df26a)
   
   (Home.html)
-  ![Image](https://github.com/user-attachments/assets/753cda67-7351-4740-af9a-67be82fb35e0)
+  - ![Image](https://github.com/user-attachments/assets/3f47e153-65f6-48dd-a82c-92e780339785)
+    
+  ![Image](https://github.com/user-attachments/assets/d3cc4b46-719b-44a5-82e4-7a089ebcbc5e)
 
   
   (Library.html)
