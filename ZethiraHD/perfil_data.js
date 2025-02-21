@@ -3,7 +3,7 @@ const token = localStorage.getItem('token');
 if (!token) {
   document.getElementById('status').textContent = 'Você não está autenticado.';
 } else {
-  fetch('https://zethirahd-production-c2af.up.railway.app/api/auth/profile', { 
+  fetch('http://localhost:5000/api/auth/profile', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ if (!token) {
       return response.json();
     })
     .then(data => {
-      document.getElementById('status').textContent = ''; // Clear status message
+      document.getElementById('status').textContent = '';
       
       document.getElementById('username').textContent = data.username;
       document.getElementById('email').textContent = data.email;
