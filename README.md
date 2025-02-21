@@ -18,3 +18,7 @@ Here i display a small demo of the prototype :
   
   (Biblioteca.html)
   ![Image](https://github.com/user-attachments/assets/17ddc56e-61a3-4029-9deb-3efa75f03d2f)
+
+  (Perfil.html)
+  ![Image](https://github.com/user-attachments/assets/78a67b37-41d5-4385-8df1-80311ec501a2)
+  
