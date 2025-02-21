@@ -17,4 +17,4 @@ Here i display a small demo of the prototype :
 
   
   (Library.html)
-  Thinking....
+  ![Image](https://github.com/user-attachments/assets/17ddc56e-61a3-4029-9deb-3efa75f03d2f)
