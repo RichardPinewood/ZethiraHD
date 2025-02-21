@@ -3,6 +3,8 @@ const usernameInput = document.getElementById('username');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 
+const API_URL = "https://zethirahd-production-c2af.up.railway.app/api/auth/register";
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -18,7 +20,7 @@ form.addEventListener('submit', async (e) => {
   const data = { username, email, password };
 
   try {
-    const response = await fetch('http://localhost:5000/api/auth/register', {
+    const response = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -36,7 +38,7 @@ form.addEventListener('submit', async (e) => {
       alert(result.message || 'Registration failed!');
     }
   } catch (error) {
-    alert('Ups,aconteçeu alguma coisa,tenta outra vez.');
+    alert('Ups, aconteceu alguma coisa, tenta outra vez.');
     console.error('Registration error:', error);
   }
 });
