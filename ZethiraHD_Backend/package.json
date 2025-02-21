@@ -1,4 +1,11 @@
 {
+  "name": "zethirahd-backend",
+  "version": "1.0.0",
+  "description": "Backend for ZethiraHD",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
@@ -8,7 +15,6 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.6",
-    "multer": "^1.4.5-lts.1",
-     "build": "echo 'No build step required'"
+    "multer": "^1.4.5-lts.1"
   }
 }
