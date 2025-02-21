@@ -5,7 +5,7 @@ Here i display a small demo of the prototype :
   (Index.html)
   ![Image](https://github.com/user-attachments/assets/7a97d01b-a2da-4622-a4ae-9c660d43903e)
 
-   - The navbar is responsive to mobile devices
+   - The navbar is responsive for mobile devices
    ![Image](https://github.com/user-attachments/assets/1c7517d4-66db-4454-a809-a6d8467df26a)
   
   (Home.html)
