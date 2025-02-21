@@ -16,8 +16,7 @@ form.addEventListener('submit', async (e) => {
   const data = { email, password };
 
   try {
-    // Updated Backend URL
-    const response = await fetch('https://zethirahd-production-c2af.up.railway.app/api/auth/login', {
+      const response = await fetch('https://zethirahd-production-c2af.up.railway.app/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
