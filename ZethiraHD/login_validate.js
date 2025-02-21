@@ -2,7 +2,7 @@ const form = document.getElementById('loginForm');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 
-const API_URL = "https://zethira-backend.up.railway.app/api/auth/login"; 
+const API_URL = "https://zethirahd-production-c2af.up.railway.app/api/auth/login"; 
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault(); 
@@ -28,9 +28,9 @@ form.addEventListener('submit', async (e) => {
 
     if (response.ok && result.token) {
       alert('Login feito com sucesso!');
-     
+      
       localStorage.setItem('token', result.token);
-     
+      
       window.location.href = '/home.html';
     } else {
       alert(result.message || 'Erro no sistema!');
