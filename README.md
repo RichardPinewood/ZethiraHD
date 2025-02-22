@@ -1,4 +1,4 @@
-Important :   This project was built only to show off, but who knows one day i make it accesible for everyone to use !
+Important : This project was built only to show off,for legal reasons i wont make it online !
 
 Here i display a small demo of the prototype :
 
