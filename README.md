@@ -4,7 +4,7 @@ Important : This project was built only to show off,but who knows one day i make
 Here i display a small demo of the prototype :
 
   (Index.html)
-  ![Image](https://github.com/user-attachments/assets/bff9997b-d03a-40c8-80bf-77389c61502f)
+  ![Image](https://github.com/user-attachments/assets/fe3658e8-7e18-4598-a442-7f94226648d2)
 
   
   
