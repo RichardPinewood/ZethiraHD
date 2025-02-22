@@ -18,7 +18,7 @@ form.addEventListener('submit', async (e) => {
   const data = { username, email, password };
 
   try {
-    const response = await fetch('http://localhost:5000/api/auth/register', {
+    const response = await fetch('https://zethirahd-production-1807.up.railway.app/api/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -28,15 +28,13 @@ form.addEventListener('submit', async (e) => {
 
     if (response.ok && result.token) {
       alert('Registro feito com sucesso!');
-      
       localStorage.setItem('token', result.token);
-     
       window.location.href = '/home.html';
     } else {
       alert(result.message || 'Registration failed!');
     }
   } catch (error) {
-    alert('Ups,aconteçeu alguma coisa,tenta outra vez.');
+    alert('Ups, aconteceu alguma coisa, tenta outra vez.');
     console.error('Registration error:', error);
   }
 });

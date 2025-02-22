@@ -16,8 +16,7 @@ form.addEventListener('submit', async (e) => {
   const data = { email, password };
 
   try {
-    
-    const response = await fetch('http://localhost:5000/api/auth/login', {
+    const response = await fetch('https://zethirahd-production-1807.up.railway.app/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -25,20 +24,15 @@ form.addEventListener('submit', async (e) => {
 
     const result = await response.json();
 
-   
     if (response.ok && result.token) {
       alert('Login feito com sucesso!');
-     
       localStorage.setItem('token', result.token);
-     
       window.location.href = '/home.html';
     } else {
-     
       alert(result.message || 'Erro no sistema!');
     }
   } catch (error) {
-    
-    alert('Um erro occureu,tente novamente mais tarde');
+    alert('Um erro occureu, tente novamente mais tarde');
     console.error('Login error:', error);
   }
 });
