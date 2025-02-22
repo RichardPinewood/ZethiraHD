@@ -14,7 +14,7 @@ const MONGO_URI = process.env.MONGO_URI;
 console.log("Mongo URI from .env:", MONGO_URI); 
 
 if (!MONGO_URI) {
-    console.error(" MONGO_URI is not defined. Check your .env file.");
+    console.error(" MONGO_URI is not defined. Check the .env file.");
     process.exit(1);
 }
 
