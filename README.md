@@ -1,5 +1,5 @@
 
-Important : This project was built only to show off !
+Important : This project was built only to show off,it will be only be public when its working perfectly !
 
 Here i display a small demo of the prototype :
 
