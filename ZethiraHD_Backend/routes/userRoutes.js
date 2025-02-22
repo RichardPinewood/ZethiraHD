@@ -4,7 +4,6 @@ const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const multer = require("multer");
-const Movie = require("../models/movie");
 const User = require("../models/user");
 
 const router = express.Router();
@@ -108,115 +107,5 @@ router.post("/login", async (req, res) => {
   }
 });
 
-
-
-router.post(
-  "/upload",
-  verifyToken,
-  upload.fields([{ name: "movieFile" }, { name: "coverFile" }]),
-  async (req, res) => {
-    try {
-      const { movieTitle, movieYear } = req.body;
-      const movieFile = req.files["movieFile"]
-        ? req.files["movieFile"][0]
-        : null;
-      const coverFile = req.files["coverFile"]
-        ? req.files["coverFile"][0]
-        : null;
-
-      if (!movieTitle || !movieYear || !movieFile) {
-        return res.status(400).json({ message: "Preencha todos os campos obrigatórios." });
-      }
-
-      console.log("Movie File Path:", movieFile.path);
-      console.log("Cover File Path:", coverFile ? coverFile.path : "No cover uploaded");
-
-      const newMovie = new Movie({
-        title: movieTitle,
-        year: movieYear,
-        videoPath: `uploads/${path.basename(movieFile.path)}`,
-        coverPath: coverFile ? `uploads/${path.basename(coverFile.path)}` : null,
-        uploadedBy: req.user.id,
-      });
-
-      await newMovie.save();
-      console.log("New movie saved:", newMovie);
-      res.json({ message: "Filme enviado com sucesso!", movie: newMovie });
-    } catch (error) {
-      console.error("Error uploading movie:", error.message);
-      res.status(500).json({ message: "Erro no servidor.", error: error.message });
-    }
-  }
-);
-
-router.get("/movies", verifyToken, async (req, res) => {
-  try {
-    const movies = await Movie.find({ uploadedBy: req.user.id });
-    res.json(
-      movies.map((movie) => ({
-        _id: movie._id,
-        title: movie.title,
-        year: movie.year,
-        videoPath: movie.videoPath
-          ? `http://localhost:5000/${movie.videoPath}`
-          : null,
-        coverPath: movie.coverPath
-          ? `http://localhost:5000/${movie.coverPath}`
-          : "default-cover.jpg",
-      }))
-    );
-  } catch (error) {
-    res.status(500).json({ message: "Erro ao buscar filmes.", error: error.message });
-  }
-});
-
-router.get("/movies/:id", async (req, res) => {
-  try {
-    const movie = await Movie.findById(req.params.id);
-    if (!movie)
-      return res.status(404).json({ message: "Filme não encontrado." });
-
-    res.json({
-      _id: movie._id,
-      title: movie.title,
-      year: movie.year,
-      videoPath: movie.videoPath
-        ? `http://localhost:5000/${movie.videoPath}`
-        : null,
-      coverPath: movie.coverPath
-        ? `http://localhost:5000/${movie.coverPath}`
-        : "default-cover.jpg",
-    });
-  } catch (error) {
-    res.status(500).json({ message: "Erro ao buscar filme.", error: error.message });
-  }
-});
-
-router.delete("/movies/:id", verifyToken, async (req, res) => {
-  try {
-    const deletedMovie = await Movie.findByIdAndDelete(req.params.id);
-    if (!deletedMovie)
-      return res.status(404).json({ message: "Filme não encontrado." });
-
-    if (
-      deletedMovie.videoPath &&
-      fs.existsSync(path.join(__dirname, "../", deletedMovie.videoPath))
-    ) {
-      fs.unlinkSync(path.join(__dirname, "../", deletedMovie.videoPath));
-    }
-    if (
-      deletedMovie.coverPath &&
-      fs.existsSync(path.join(__dirname, "../", deletedMovie.coverPath))
-    ) {
-      fs.unlinkSync(path.join(__dirname, "../", deletedMovie.coverPath));
-    }
-
-    res.json({ message: "Filme removido com sucesso!", deletedMovie });
-  } catch (error) {
-    res.status(500).json({ message: "Erro ao remover filme.", error: error.message });
-  }
-});
-
-router.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 module.exports = router;
