@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       inputGroup.classList.add("active");
       coverContainer.classList.add("active");
       saveButton.style.display = "block";
-      // Hide the "Anexar Conteúdo" button
       fileSelectButton.style.display = "none";
     } else {
       fileInfo.textContent = "Nenhum ficheiro selecionado";
@@ -65,7 +64,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     e.preventDefault();
 
     if (!token) {
-      alert("Você precisa estar logado para fazer upload de filmes.");
+      alert("É preciso ter iniciado sessão para fazeres upload.");
       return;
     }
 
@@ -74,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const file = fileInput.files[0];
 
     if (!title || !year || !file) {
-      alert("Por favor, insira o nome, o ano e selecione um ficheiro.");
+      alert("Por favor, insire o nome, o ano e seleciona um filme.");
       return;
     }
 
@@ -95,7 +94,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       saveButton.textContent = "Enviando...";
       saveButton.disabled = true;
 
-      const response = await fetch("http://localhost:5000/api/auth/upload", {
+      const response = await fetch("https://zethirahd-production-1807.up.railway.app/api/auth/upload", {
         method: "POST",
         body: formData,
         headers: {
@@ -111,8 +110,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await response.json();
       console.log("Upload feito com sucesso:", data);
       alert(`Filme "${data.movie.title}" (${data.movie.year}) salvo com sucesso!`);
-
-      // Reset the form and UI elements
+      
       uploadForm.reset();
       fileInfo.textContent = "Nenhum ficheiro selecionado";
       fileInfo.classList.remove("active");
@@ -122,11 +120,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       saveButton.style.display = "none";
       saveButton.textContent = "Salvar";
       saveButton.disabled = false;
-      // Show the "Anexar Conteúdo" button after reset
       fileSelectButton.style.display = "block";
 
       if (data.movie.coverPath) {
-        coverPreview.style.backgroundImage = `url(http://localhost:5000/${data.movie.coverPath})`;
+        coverPreview.style.backgroundImage = `url(https://zethirahd-production-1807.up.railway.app/${data.movie.coverPath})`;
       } else {
         coverPreview.style.backgroundImage = "";
       }
@@ -136,7 +133,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     } catch (error) {
       console.error("Upload Error:", error);
       if (error.message.includes("Invalid token")) {
-        alert("O token é inválido. Por favor, faça login novamente.");
+        alert("O token é inválido. Por favor, inicia sessão novamente.");
       } else {
         alert("Ocorreu um erro durante o upload: " + error.message);
       }
