@@ -1,7 +1,7 @@
 const token = localStorage.getItem('token');
 
 if (!token) {
-  document.getElementById('status').textContent = 'Você não está autenticado.';
+  document.getElementById('status').textContent = 'Não tens a sessão iniciada.';
 } else {
   fetch('https://zethirahd-production-1807.up.railway.app/api/auth/profile', {
     method: 'GET',
