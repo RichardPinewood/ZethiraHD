@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-  <title>ZethiraHD</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZethiraHD - Profile</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <style>
     body {
-      color: #fff;
-      min-height: 100vh;
+      color: #333;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
       margin: 0;
       padding: 0;
+      position: relative;
     }
-    
+
     .navbar-brand {
+      display: flex;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       font-size: 3.5rem;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -26,28 +27,42 @@
       position: relative;
       bottom: 10px;
     }
-    
+
     .navbar-brand a {
       text-decoration: none;
       color: orange;
       font-size: 1.5rem;
       font-weight: bold;
     }
-    
 
-    
+    /* Default nav link styles */
+    .nav-links a {
+      text-decoration: none;
+      color: white; /* Default color */
+      padding: 8px 12px;
+      transition: color 0.3s ease;
+    }
+
+    /* Active link styles */
+    .nav-links a.active {
+      color: orange; /* Highlight active link */
+      font-weight: bold;
+      border-bottom: 2px solid orange; /* Underline on desktop */
+    }
+
+    /* On mobile, remove the underline */
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
       }
-      
+
       .navbar-brand {
         display: flex;
         position: absolute;
         left: 46%;
         transform: translateX(-50%);
       }
-      
+
       .nav-links {
         flex-direction: column;
         position: absolute;
@@ -57,19 +72,74 @@
         padding: 10px;
         border-radius: 5px;
         display: none;
-        width: 180px;
+        width: 160px;
         align-items: flex-start;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-        margin: 0;
       }
 
       .nav-links.show {
         display: flex !important;
       }
+
+      /* Remove underline from active links on mobile */
+      .nav-links a.active {
+        border-bottom: none;
+      }
     }
 
+    main {
+      flex: 1;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    .profile-container {
+      position: absolute;
+      top: 100px; 
+      left: 100px; 
+      background-color: #1f1f1f;
+      border-radius: 8px;
+      padding: 40px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: start;
+    }
+
+    .profile-detail {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin: 10px 0;
+      color: white;
+    }
+
+    .profile-container h2 {
+      text-align: start;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .profile-container p {
+      text-align: start;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .profile-container {
+        display: auto;
+        position: relative; 
+        width: 90vw; 
+        max-width: 400px; 
+        padding: 20px;
+        margin: 20px auto; 
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        left: 5px;
+      }
+    }
   </style>
-  
+
   <nav>
     <div class="navbar-container">
       <div class="menu-toggle" id="menu-toggle">☰</div>
@@ -86,8 +156,9 @@
     </div>
   </nav>
 
-  
-  <script src="toggle_menu.js"></script>
   <script src="logout_redirect.js"></script>
+  <script src="toggle_menu.js"></script>
+  <script src="navlink_active.js"></script>
+
 </body>
 </html>
