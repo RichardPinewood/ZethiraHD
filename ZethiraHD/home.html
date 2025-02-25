@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>ZethiraHD</title>
@@ -16,8 +16,26 @@
       min-height: 100vh;
       margin: 0;
       padding: 0;
-      position: relative;
       font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .navbar-brand a {
+      text-decoration: none;
+      color: orange;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
     }
 
     .theme-info {
@@ -26,26 +44,18 @@
       margin-top: 20px;
     }
 
-    .theme-info button {
-      color: white;
+    .filter-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
-      margin: 20px 0;
-      text-align: center;
+      gap: 10px;
     }
 
-    .filter-container {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .filter-container button {
-      background: white;
-      color: black;
-      border: 2px solid black;
-      padding: 10px 16px;
+    .filter-container button { 
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
       margin: 5px;
       border-radius: 20px;
       cursor: pointer;
@@ -54,20 +64,9 @@
       text-align: center;
     }
 
-
-    .filter-container button {
-      background: #333;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
     .slider-container {
-      justify-content: center;
       display: flex;
+      justify-content: center;
       align-items: center;
       gap: 10px;
     }
@@ -88,7 +87,6 @@
 
     .genre-list {
       display: flex;
-      transition: transform 0.3s ease-in-out;
       padding-right: 10px;
     }
 
@@ -102,23 +100,6 @@
       cursor: pointer;
       color: white;
       border: none;
-    }
-
-    .navbar-brand {
-      display: flex;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      font-size: 3.5rem;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      transition: color 0.3s ease, transform 0.3s ease;
-      position: relative;
-      bottom: 10px;
-    }
-
-    .navbar-brand a {
-      text-decoration: none;
-      color: orange;
-      font-size: 1.5rem;
-      font-weight: bold;
     }
 
     .movie-list {
@@ -144,7 +125,6 @@
       }
 
       .navbar-brand {
-        display: flex;
         position: absolute;
         left: 46%;
         transform: translateX(-50%);
@@ -167,60 +147,53 @@
       .nav-links.show {
         display: flex !important;
       }
-
-      .nav-links a.active {
-        border-bottom: none;
-      }
     }
   </style>
 
-<nav>
-  <div class="navbar-container">
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <div class="navbar-brand">
-      <a href="index.html">ZethiraHD</a>
-    </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="watch_later.html">Watch Later</a></li>
-      <li><a href="recommend.html">Share Something</a></li>
-      <li><a href="perfil.html">Profile</a></li>
-      <li><a href="index.html" id="logout">Logout</a></li>
-    </ul>
-  </div>
-</nav>
-
-<h2 class="theme-info">
-  Choose a theme
-</h2>
-
-<div class="slider-container">
-  <button class="arrow-icon" onclick="moveLeft()"><i class="bi bi-chevron-left"></i></button>
-  <div class="genres">
-      <div class="genre-list">
-          <button class="genre">Action</button>
-          <button class="genre">Anime</button>
-          <button class="genre">Comedy</button>
-          <button class="genre">Drama</button>
-          <button class="genre">Horror</button>
-          <button class="genre">Sci-Fy</button>
-          <button class="genre">Thriller</button>
-          <button class="genre">Fantasy</button>
+  <nav>
+    <div class="navbar-container">
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <div class="navbar-brand">
+        <a href="index.html">ZethiraHD</a>
       </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="watch_later.html">Watch Later</a></li>
+        <li><a href="recommend.html">Share Something</a></li>
+        <li><a href="perfil.html">Profile</a></li>
+        <li><a href="index.html" id="logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h2 class="theme-info">Choose a theme</h2>
+
+  <div class="slider-container">
+    <button class="arrow-icon" onclick="moveLeft()"><i class="bi bi-chevron-left"></i></button>
+    <div class="genres">
+      <div class="genre-list">
+        <button class="genre">Action</button>
+        <button class="genre">Anime</button>
+        <button class="genre">Comedy</button>
+        <button class="genre">Drama</button>
+        <button class="genre">Horror</button>
+        <button class="genre">Sci-Fi</button>
+        <button class="genre">Thriller</button>
+        <button class="genre">Fantasy</button>
+      </div>
+    </div>
+    <button class="arrow-icon" onclick="moveRight()"><i class="bi bi-chevron-right"></i></button>
   </div>
-  <button class="arrow-icon" onclick="moveRight()"><i class="bi bi-chevron-right"></i></button>
-</div>
 
-<h2 class="theme-info">What are you watching?</h2>
-<div class="filter-container">
-  <button class="content">Movie</button>
-  <button class="content">TV Show</button>
-</div>
+  <h2 class="theme-info">What are you watching?</h2>
+  <div class="filter-container">
+    <button class="content">Movie</button>
+    <button class="content">TV Show</button>
+  </div>
 
-
-<script src="carrousel.js"></script>
-<script src="logout_redirect.js"></script>
-<script src="toggle_menu.js"></script>
-<script src="navlink_active.js"></script>
+  <script src="carrousel.js"></script>
+  <script src="logout_redirect.js"></script>
+  <script src="toggle_menu.js"></script>
+  <script src="navlink_active.js"></script>
 </body>
 </html>
