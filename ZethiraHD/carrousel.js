@@ -10,6 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
         genresContainer.scrollBy({ left: 150, behavior: "smooth" });
     }
 
-    document.querySelector(".arrow:first-child").addEventListener("click", moveLeft);
-    document.querySelector(".arrow:last-child").addEventListener("click", moveRight);
+    document.querySelector(".arrow-icon:first-child").addEventListener("click", moveLeft);
+    document.querySelector(".arrow-icon:last-child").addEventListener("click", moveRight);
 });
