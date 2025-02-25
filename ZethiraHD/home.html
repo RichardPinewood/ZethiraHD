@@ -1,21 +1,106 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
+  <title>ZethiraHD</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZethiraHD - Profile</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
   <style>
     body {
-      color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       margin: 0;
       padding: 0;
       position: relative;
+      font-family: Arial, sans-serif;
+    }
+
+    .theme-info {
+      text-align: center;
+      color: white;
+      margin-top: 20px;
+    }
+
+    .theme-info button {
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .filter-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .filter-container button {
+      background: white;
+      color: black;
+      border: 2px solid black;
+      padding: 10px 16px;
+      margin: 5px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      width: 120px; 
+      text-align: center;
+    }
+
+
+    .filter-container button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .slider-container {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .arrow {
+      cursor: pointer;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    .genres {
+      display: flex;
+      overflow: hidden;
+      width: 430px;
+    }
+
+    .genre-list {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+      padding-right: 10px;
+    }
+
+    .genre {
+      flex: 0 0 100px;
+      text-align: center;
+      background: #333;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+      border: none;
     }
 
     .navbar-brand {
@@ -35,17 +120,46 @@
       font-weight: bold;
     }
 
-    .nav-links a {
-      text-decoration: none;
-      color: white; 
-      padding: 8px 12px;
-      transition: color 0.3s ease;
+    .recommendations-container {
+      width: 90%;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      background: #1a1a1a;
+      color: white;
+      border-radius: 10px;
     }
 
-    .nav-links a.active {
-      color: orange; 
-      font-weight: bold;
-      border-bottom: 2px solid orange; 
+    .recommendations-container h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 10px;
+      color: orange;
+    }
+
+    .recommendations-container p {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .movie-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .movie {
+      width: 100%;
+      padding: 10px;
+      background: #333;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+      font-size: 1.2rem;
     }
 
     @media (max-width: 768px) {
@@ -84,23 +198,58 @@
     }
   </style>
 
-  <nav>
-    <div class="navbar-container">
-      <div class="menu-toggle" id="menu-toggle">☰</div>
-      <div class="navbar-brand">
-        <a href="index.html">ZethiraHD</a>
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="watch_later.html">Watch Later</a></li>
-        <li><a href="perfil.html">Profile</a></li>
-        <li><a href="index.html" id="logout">Logout</a></li>
-      </ul>
+<nav>
+  <div class="navbar-container">
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <div class="navbar-brand">
+      <a href="index.html">ZethiraHD</a>
     </div>
-  </nav>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="watch_later.html">Watch Later</a></li>
+      <li><a href="recommend.html">Share Something</a></li>
+      <li><a href="perfil.html">Profile</a></li>
+      <li><a href="index.html" id="logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <script src="logout_redirect.js"></script>
-  <script src="toggle_menu.js"></script>
-  <script src="navlink_active.js"></script>
+<h2 class="theme-info">
+  Choose a theme
+</h2>
+
+<div class="slider-container">
+  <button class="arrow" onclick="moveLeft()">&#9665;</button>
+  <div class="genres">
+      <div class="genre-list">
+          <button class="genre">Action</button>
+          <button class="genre">Anime</button>
+          <button class="genre">Comedy</button>
+          <button class="genre">Drama</button>
+          <button class="genre">Horror</button>
+          <button class="genre">Sci-Fy</button>
+          <button class="genre">Thriller</button>
+          <button class="genre">Fantasy</button>
+      </div>
+  </div>
+  <button class="arrow" onclick="moveRight()">&#9655;</button>
+</div>
+
+<h2 class="theme-info">What are you watching?</h2>
+<div class="filter-container">
+  <button class="content">Movie</button>
+  <button class="content">TV Show</button>
+</div>
+
+<article class="recommendations-container">
+  <div class="movie-list" id="movie-list">
+    <div class="movie">No recommendations yet.</div>
+  </div>
+</article>
+
+<script src="carrousel.js"></script>
+<script src="logout_redirect.js"></script>
+<script src="toggle_menu.js"></script>
+<script src="navlink_active.js"></script>
 </body>
 </html>

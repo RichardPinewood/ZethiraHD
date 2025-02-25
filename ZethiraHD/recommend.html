@@ -82,58 +82,6 @@
         border-bottom: none;
       }
     }
-
-    main {
-      flex: 1;
-      padding: 20px;
-      margin-top: 60px;
-    }
-
-    .profile-container {
-      position: absolute;
-      top: 100px; 
-      left: 100px; 
-      background-color: #1f1f1f;
-      border-radius: 8px;
-      padding: 40px;
-      width: 100%;
-      max-width: 500px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      text-align: start;
-    }
-
-    .profile-detail {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin: 10px 0;
-      color: white;
-    }
-
-    .profile-container h2 {
-      text-align: start;
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    .profile-container p {
-      text-align: start;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .profile-container {
-        display: auto;
-        position: relative; 
-        width: 90vw; 
-        max-width: 400px; 
-        padding: 20px;
-        margin: 20px auto; 
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        left: 5px;
-      }
-    }
   </style>
 
 <nav>
@@ -151,21 +99,8 @@
     </ul>
   </div>
 </nav>
-  <main>
-    <div class="profile-container" id="profile-info">
-      <h2>Detalhes do Perfil</h2>
-      <p id="status">A carregar o perfil...</p>
-      <p class="profile-detail">
-        <strong>Nome:</strong> <span id="username"></span>
-      </p>
-      <p class="profile-detail">
-        <strong>Email:</strong> <span id="email"></span>
-      </p>
-    </div>
-  </main>
 
   <script src="logout_redirect.js"></script>
-  <script src="perfil_data.js"></script>
   <script src="toggle_menu.js"></script>
   <script src="navlink_active.js"></script>
 

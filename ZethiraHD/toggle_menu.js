@@ -6,3 +6,4 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
   function toggleFaq(element) {
     element.classList.toggle("active");
   }
+  
