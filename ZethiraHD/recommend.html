@@ -9,13 +9,12 @@
 <body>
   <style>
     body {
-      color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       margin: 0;
       padding: 0;
-      position: relative;
+      align-items: center;
     }
 
     .navbar-brand {
@@ -35,20 +34,104 @@
       font-weight: bold;
     }
 
-    .nav-links a {
-      text-decoration: none;
-      color: white; 
-      padding: 8px 12px;
-      transition: color 0.3s ease;
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
     }
 
-    .nav-links a.active {
-      color: orange; 
-      font-weight: bold;
-      border-bottom: 2px solid orange; 
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .form-container {
+      width: 90%;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 15px;
+      box-sizing: border-box;
+    }
+
+    .form-section h3 {
+      font-size: 18px;
+      margin: 0 0 15px 0;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .choice-buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .choice-button {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid gray;
+      background-color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .choice-button:hover {
+      background-color: white;
+    }
+
+    .form-field {
+      margin-bottom: 20px;
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .form-field input, 
+    .form-field select, 
+    .form-field textarea {
+      width: 100%;
+      padding: 12px;
+      background-color: white;
+      color: #333; 
+      border: 1px solid white;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .form-field textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .publish-button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .publish-button:hover {
+      background-color: #333;
     }
 
     @media (max-width: 768px) {
+
       .menu-toggle {
         display: block;
       }
@@ -82,27 +165,73 @@
         border-bottom: none;
       }
     }
+
+    @media (max-width: 480px) {
+      .choice-buttons {
+        flex-direction: column;
+      }
+      
+      .choice-button {
+        width: 100%;
+      }
+      
+      .publish-button {
+        width: 100%;
+      }
+    }
   </style>
 
-<nav>
-  <div class="navbar-container">
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <div class="navbar-brand">
-      <a href="index.html">ZethiraHD</a>
+  <nav>
+    <div class="navbar-container">
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <div class="navbar-brand">
+        <a href="index.html">ZethiraHD</a>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="watch_later.html">Watch Later</a></li>
+        <li><a href="recommend.html">Share Something</a></li>
+        <li><a href="perfil.html">Profile</a></li>
+        <li><a href="index.html" id="logout">Logout</a></li>
+      </ul>
     </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="watch_later.html">Watch Later</a></li>
-      <li><a href="recommend.html">Share Something</a></li>
-      <li><a href="perfil.html">Profile</a></li>
-      <li><a href="index.html" id="logout">Logout</a></li>
-    </ul>
+  </nav>
+
+  <div class="form-container">
+    <div class="form-section">
+      <h3>Choose wisely</h3>
+      <div class="choice-buttons">
+        <button class="choice-button" id="movie-btn">Movie</button>
+        <button class="choice-button" id="tv-btn">TV Show</button>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <span class="field-label">Title</span>
+      <input type="text" id="title" placeholder="Enter the title">
+    </div>
+
+    <div class="form-field">
+      <span class="field-label">Genre</span>
+      <select id="genre">
+        <option>Action</option>
+        <option>Drama</option>
+        <option>Comedy</option>
+        <option>Sci-Fi</option>
+        <option>Horror</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <span class="field-label">Share your thoughts</span>
+      <textarea id="thoughts"></textarea>
+    </div>
+
+    <button class="publish-button">Publish</button>
   </div>
-</nav>
 
   <script src="logout_redirect.js"></script>
   <script src="toggle_menu.js"></script>
   <script src="navlink_active.js"></script>
-
 </body>
 </html>
